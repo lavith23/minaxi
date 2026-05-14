@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minaxi Textiles – Elegant Ethnic Dupattas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C97A;--gold-dark:#9A7A2E;--cream:#FAF6F0;--dark:#1A1209;--dark2:#2C2012;--maroon:#6B1B2A;--maroon-light:#8B2A3B;--text:#3D2B1F;--text-light:#7A6555;--white:#FFFFFF;--border:rgba(201,168,76,0.25);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--cream);}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+.top-bar{background:var(--dark);color:var(--gold-light);text-align:center;padding:8px 20px;font-size:12px;letter-spacing:2px;}
+header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:999;box-shadow:0 2px 20px rgba(0,0,0,0.08);}
+.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 30px;gap:20px;}
+.logo-wrap img{height:75px;width:75px;object-fit:contain;cursor:pointer;}
+.site-name{flex:1;text-align:center;}
+.site-name h1{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--maroon);letter-spacing:2px;font-weight:600;}
+.site-name p{font-size:10px;letter-spacing:4px;color:var(--gold-dark);text-transform:uppercase;}
+.header-actions{display:flex;align-items:center;gap:16px;}
+.icon-btn{background:none;border:none;cursor:pointer;font-size:22px;color:var(--text);position:relative;transition:color 0.2s;}
+.icon-btn:hover{color:var(--maroon);}
+.cart-badge{position:absolute;top:-6px;right:-6px;background:var(--maroon);color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;}
+.search-bar{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:30px;overflow:hidden;background:#f9f5ef;}
+.search-bar input{border:none;outline:none;background:transparent;padding:8px 16px;font-size:13px;width:200px;font-family:'Jost',sans-serif;}
+.search-bar button{background:var(--maroon);border:none;padding:8px 14px;cursor:pointer;color:#fff;}
+nav{background:var(--maroon);}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;padding:0 30px;}
+nav a{color:rgba(255,255,255,0.9);text-decoration:none;padding:13px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:background 0.2s;display:block;cursor:pointer;}
+nav a:hover,nav a.active{background:rgba(0,0,0,0.2);color:var(--gold-light);}
+.nav-gold{margin-left:auto;}
+nav a.nav-gold{background:var(--gold);color:var(--dark);font-weight:600;}
+nav a.nav-gold:hover{background:var(--gold-light);}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 40%,#3D1A0A 100%);min-height:560px;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;opacity:0.07;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-content{max-width:1400px;margin:0 auto;padding:60px 30px;display:flex;align-items:center;gap:60px;position:relative;z-index:1;width:100%;}
+.hero-text{flex:1;}
+.hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:5px 18px;font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:20px;}
+.hero-text h2{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--white);line-height:1.1;font-weight:300;}
+.hero-text h2 em{color:var(--gold-light);font-style:italic;}
+.hero-text p{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.8;margin:20px 0 32px;max-width:420px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--dark);padding:14px 36px;border:none;cursor:pointer;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;font-family:'Jost',sans-serif;transition:all 0.3s;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,0.4);}
+.btn-outline{background:transparent;color:var(--white);padding:14px 36px;border:1px solid rgba(255,255,255,0.4);cursor:pointer;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:'Jost',sans-serif;transition:all 0.3s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-logo{flex-shrink:0;}
+.hero-logo img{width:280px;height:280px;object-fit:contain;filter:drop-shadow(0 20px 60px rgba(201,168,76,0.35));animation:float 4s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+.hero-stats{display:flex;gap:40px;margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);}
+.hero-stat h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:400;}
+.hero-stat p{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;}
+.features-bar{background:var(--white);border-bottom:1px solid var(--border);}
+.features-inner{max-width:1400px;margin:0 auto;display:flex;padding:0 30px;}
+.feature-item{flex:1;display:flex;align-items:center;gap:12px;padding:18px 20px;border-right:1px solid var(--border);}
+.feature-item:last-child{border-right:none;}
+.feature-item .icon{font-size:22px;}
+.feature-item h4{font-size:11px;font-weight:600;letter-spacing:1px;color:var(--dark);}
+.feature-item p{font-size:10px;color:var(--text-light);}
+section{padding:70px 30px;}
+.section-inner{max-width:1400px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:50px;}
+.eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:10px;display:block;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--dark);font-weight:400;}
+.section-header .sub{font-size:13px;color:var(--text-light);margin-top:10px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8;}
+.gold-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:14px auto;}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.product-card{background:var(--white);border:1px solid var(--border);position:relative;overflow:hidden;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.1);}
+.product-img-wrap{position:relative;overflow:hidden;aspect-ratio:3/4;background:linear-gradient(135deg,#f9f0e6,#fdf6ee);}
+.product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.product-card:hover .product-img-wrap img{transform:scale(1.06);}
+.product-badge{position:absolute;top:12px;left:12px;padding:4px 10px;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:600;z-index:2;}
+.badge-new{background:var(--maroon);color:#fff;}
+.badge-sale{background:var(--gold);color:var(--dark);}
+.badge-hot{background:var(--dark);color:var(--gold);}
+.product-actions{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateX(20px);transition:all 0.3s;z-index:2;}
+.product-card:hover .product-actions{opacity:1;transform:translateX(0);}
+.product-actions button{width:36px;height:36px;background:var(--white);border:none;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.12);transition:background 0.2s;}
+.product-actions button:hover{background:var(--maroon);color:#fff;}
+.product-info{padding:16px;}
+.product-info h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);margin-bottom:4px;font-weight:400;}
+.product-info .fab{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+.price-wrap{display:flex;align-items:center;justify-content:space-between;}
+.price{font-size:1.1rem;color:var(--maroon);font-weight:600;}
+.old-price{font-size:12px;color:var(--text-light);text-decoration:line-through;margin-left:6px;}
+.add-cart-btn{background:none;border:none;cursor:pointer;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);font-weight:600;font-family:'Jost',sans-serif;padding:6px 0;border-bottom:1px solid var(--gold);transition:color 0.2s;}
+.add-cart-btn:hover{color:var(--maroon);}
+.stars{color:var(--gold);font-size:12px;margin-bottom:4px;}
+.categories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.cat-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/5;background:var(--dark2);}
+.cat-card:first-child{grid-row:span 2;aspect-ratio:auto;}
+.cat-card img{width:100%;height:100%;object-fit:cover;opacity:0.6;transition:transform 0.5s,opacity 0.3s;}
+.cat-card:hover img{transform:scale(1.08);opacity:0.4;}
+.cat-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:30px;background:linear-gradient(to top,rgba(26,18,9,0.85) 0%,transparent 60%);}
+.cat-overlay h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#fff;text-align:center;line-height:1.2;}
+.cat-overlay .cnt{font-size:11px;color:rgba(255,255,255,0.5);margin-top:6px;}
+.cat-btn{margin-top:14px;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 22px;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.3s;opacity:0;transform:translateY(10px);}
+.cat-card:hover .cat-btn{opacity:1;transform:translateY(0);}
+.cat-btn:hover{background:var(--gold);color:var(--dark);}
+.luxury-banner{background:linear-gradient(135deg,var(--maroon) 0%,#3D0A15 100%);padding:80px 30px;text-align:center;position:relative;overflow:hidden;}
+.luxury-banner::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.05'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");}
+.luxury-banner-inner{max-width:700px;margin:0 auto;position:relative;}
+.luxury-banner h2{font-family:'Cormorant Garamond',serif;font-size:3.2rem;color:#fff;font-weight:300;line-height:1.2;margin-bottom:16px;}
+.luxury-banner p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.8;margin-bottom:30px;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testi-card{background:var(--white);border:1px solid var(--border);padding:30px;position:relative;}
+.testi-card::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--gold);opacity:0.3;position:absolute;top:-10px;left:20px;line-height:1;}
+.testi-card p.quote{font-size:13px;line-height:1.9;color:var(--text);font-style:italic;margin-bottom:20px;position:relative;z-index:1;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--maroon);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.2rem;flex-shrink:0;}
+.testi-author h4{font-size:13px;font-weight:600;color:var(--dark);}
+.testi-author p{font-size:11px;color:var(--text-light);}
+footer{background:var(--dark);color:rgba(255,255,255,0.6);}
+.footer-top{max-width:1400px;margin:0 auto;padding:60px 30px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;}
+.footer-brand img{height:70px;width:70px;object-fit:contain;margin-bottom:16px;}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:10px;}
+.footer-brand p{font-size:12px;line-height:1.8;}
+.footer-social{display:flex;gap:10px;margin-top:20px;}
+.social-btn{width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.2s;background:none;color:rgba(255,255,255,0.6);}
+.social-btn:hover{border-color:var(--gold);color:var(--gold);}
+.footer-col h4{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:10px;transition:color 0.2s;cursor:pointer;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);text-align:center;padding:20px 30px;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.3);}
+.footer-bottom span{color:var(--gold);}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:400px;background:var(--white);z-index:2001;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;}
+.cart-drawer.open{transform:translateX(0);}
+.cart-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.cart-head h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--dark);}
+.cart-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-light);}
+.cart-items{flex:1;overflow-y:auto;padding:20px 24px;}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.cart-item-img{width:70px;height:90px;background:var(--cream);flex-shrink:0;overflow:hidden;}
+.cart-item-img img{width:100%;height:100%;object-fit:cover;}
+.cart-item-info{flex:1;min-width:0;}
+.cart-item-info h4{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:4px;}
+.cart-item-info .fab2{font-size:10px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;}
+.cart-item-price{font-size:14px;color:var(--maroon);font-weight:600;margin-top:6px;}
+.qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.qty-ctrl button{width:26px;height:26px;border:1px solid var(--border);background:none;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;line-height:1;}
+.qty-ctrl span{font-size:13px;width:20px;text-align:center;}
+.cart-remove{background:none;border:none;color:var(--text-light);cursor:pointer;font-size:16px;padding:0;display:flex;align-items:flex-start;}
+.cart-footer{padding:20px 24px;border-top:1px solid var(--border);}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.cart-total span{font-size:13px;color:var(--text-light);}
+.cart-total strong{font-size:1.3rem;color:var(--dark);font-family:'Cormorant Garamond',serif;}
+.empty-cart{text-align:center;padding:60px 20px;color:var(--text-light);}
+.empty-cart .eicon{font-size:48px;margin-bottom:16px;}
+.empty-cart p{font-size:13px;margin-bottom:20px;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:3000;opacity:0;pointer-events:none;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.product-modal{background:var(--white);max-width:880px;width:100%;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;position:relative;}
+.modal-img{background:linear-gradient(135deg,#f9f0e6,#fdf6ee);padding:40px;display:flex;align-items:center;justify-content:center;min-height:400px;}
+.modal-img img{max-height:380px;object-fit:contain;width:100%;}
+.modal-info{padding:40px;}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--white);border:none;font-size:20px;cursor:pointer;color:var(--text-light);z-index:10;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.modal-info h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--dark);margin-bottom:6px;font-weight:400;}
+.modal-info .fab-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:14px;display:block;}
+.modal-price{font-size:1.8rem;color:var(--maroon);font-family:'Cormorant Garamond',serif;margin-bottom:16px;}
+.modal-info .mdesc{font-size:13px;line-height:1.8;color:var(--text-light);margin-bottom:20px;}
+.size-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);font-weight:600;margin-bottom:10px;display:block;}
+.size-btns{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.size-btn{padding:8px 16px;border:1px solid var(--border);background:none;cursor:pointer;font-size:12px;font-family:'Jost',sans-serif;transition:all 0.2s;}
+.size-btn.active,.size-btn:hover{border-color:var(--maroon);background:var(--maroon);color:#fff;}
+.modal-btns{display:flex;gap:10px;}
+.modal-btns button{padding:14px;border:none;cursor:pointer;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:600;transition:all 0.3s;}
+.color-dots{display:flex;gap:8px;margin-bottom:18px;}
+.color-dot{width:22px;height:22px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:border-color 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.2);}
+.color-dot.active,.color-dot:hover{border-color:var(--dark);}
+.admin-fab{position:fixed;bottom:30px;right:30px;z-index:1500;}
+.admin-fab button{background:var(--dark);color:var(--gold);border:2px solid var(--gold);width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:20px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all 0.3s;}
+.admin-fab button:hover{background:var(--gold);color:var(--dark);}
+.admin-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:4000;opacity:0;pointer-events:none;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;padding:20px;}
+.admin-overlay.open{opacity:1;pointer-events:all;}
+.admin-box{background:var(--white);width:920px;max-height:90vh;overflow-y:auto;position:relative;}
+.admin-head{background:var(--dark);padding:20px 30px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.admin-head h2{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:1.5rem;}
+.admin-close-btn{background:none;border:none;color:rgba(255,255,255,0.6);font-size:22px;cursor:pointer;}
+.admin-tabs{display:flex;border-bottom:2px solid var(--border);padding:0 30px;background:var(--cream);position:sticky;top:62px;z-index:9;}
+.admin-tab{padding:14px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:600;color:var(--text-light);transition:all 0.2s;background:none;border-left:none;border-right:none;border-top:none;}
+.admin-tab.active{color:var(--maroon);border-bottom-color:var(--maroon);}
+.admin-content{padding:30px;}
+.admin-section{display:none;}
+.admin-section.active{display:block;}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;font-weight:600;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 14px;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;background:var(--white);color:var(--dark);}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:90px;}
+.admin-btn{background:var(--maroon);color:#fff;border:none;padding:11px 26px;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;font-weight:600;transition:background 0.2s;}
+.admin-btn:hover{background:var(--maroon-light);}
+.admin-btn.sec{background:var(--dark2);}
+.admin-prods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
+.admin-prod-item{border:1px solid var(--border);padding:12px;background:var(--white);}
+.admin-prod-item img{width:100%;aspect-ratio:3/4;object-fit:cover;margin-bottom:10px;background:var(--cream);}
+.admin-prod-item h4{font-size:12px;font-weight:600;color:var(--dark);margin-bottom:3px;}
+.admin-prod-item .info{font-size:11px;color:var(--text-light);}
+.admin-prod-actions{display:flex;gap:8px;margin-top:10px;}
+.admin-prod-actions button{flex:1;padding:7px;font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;border:1px solid var(--border);background:none;color:var(--text);}
+.admin-prod-actions button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon);}
+.img-upload-area{border:2px dashed var(--border);padding:28px;text-align:center;cursor:pointer;position:relative;background:var(--cream);transition:border-color 0.2s;}
+.img-upload-area:hover{border-color:var(--gold);}
+.img-upload-area input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.img-upload-area .uicon{font-size:32px;color:var(--gold);margin-bottom:8px;}
+.img-upload-area p{font-size:12px;color:var(--text-light);}
+.img-preview{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.img-preview img{width:72px;height:72px;object-fit:cover;border:1px solid var(--border);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+.stat-card{background:var(--dark);color:#fff;padding:20px;text-align:center;}
+.stat-card h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);}
+.stat-card p{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;}
+.orders-table{width:100%;border-collapse:collapse;}
+.orders-table th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);padding:10px 14px;text-align:left;border-bottom:2px solid var(--border);}
+.orders-table td{padding:12px 14px;font-size:12px;border-bottom:1px solid var(--border);}
+.order-status{padding:3px 10px;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:600;}
+.s-delivered{background:#e8f5e9;color:#388e3c;}
+.s-pending{background:#fff8e1;color:#f57c00;}
+.s-processing{background:#e3f2fd;color:#1976d2;}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--dark);color:var(--gold);padding:14px 28px;font-size:12px;letter-spacing:1px;z-index:9999;transition:transform 0.4s;pointer-events:none;border-left:3px solid var(--gold);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.whatsapp-btn{position:fixed;bottom:30px;left:30px;z-index:1500;background:#25D366;color:#fff;border:none;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:24px;box-shadow:0 4px 20px rgba(0,0,0,0.2);transition:transform 0.3s;display:flex;align-items:center;justify-content:center;}
+.whatsapp-btn:hover{transform:scale(1.1);}
+</style>
+</head>
+<body>
+
+<div class="top-bar">🌸 Free Shipping on Orders Above ₹999 &nbsp;|&nbsp; Code <strong>MINAXI10</strong> for 10% Off &nbsp;|&nbsp; Call: +91 98765 43210</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap"><img id="siteLogo" src="logo.png" alt="Minaxi Textiles" onclick="window.scrollTo({top:0,behavior:'smooth'})"></div>
+    <div class="site-name">
+      <h1 id="siteName">Minaxi Textiles</h1>
+      <p id="siteTagline">Elegant Ethnic Dupattas</p>
+    </div>
+    <div class="header-actions">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search dupattas..." oninput="searchProducts()">
+        <button>🔍</button>
+      </div>
+      <button class="icon-btn" onclick="showToast('❤️ Wishlist coming soon!')">♡</button>
+      <button class="icon-btn" onclick="toggleCart()" style="position:relative">🛍️<span class="cart-badge" id="cartBadge">0</span></button>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="active" onclick="filterCat('all')">All Products</a>
+    <a onclick="filterCat('banarasi')">Banarasi</a>
+    <a onclick="filterCat('chiffon')">Chiffon</a>
+    <a onclick="filterCat('georgette')">Georgette</a>
+    <a onclick="filterCat('silk')">Pure Silk</a>
+    <a onclick="filterCat('bridal')">Bridal</a>
+    <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Us</a>
+    <a class="nav-gold" onclick="showToast('📞 Call us: +91 98765 43210')">📞 Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">New Collection 2025</div>
+      <h2>Drape Yourself in <em>Elegance</em> &amp; Heritage</h2>
+      <p>Discover exquisite handcrafted ethnic dupattas — where tradition meets timeless luxury. Each piece tells a story woven in gold, silk &amp; love.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+        <button class="btn-outline" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Explore Collection</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><h3>500+</h3><p>Designs</p></div>
+        <div class="hero-stat"><h3>10K+</h3><p>Happy Customers</p></div>
+        <div class="hero-stat"><h3>15+</h3><p>Years Legacy</p></div>
+      </div>
+    </div>
+    <div class="hero-logo"><img src="logo.png" alt="Minaxi Textiles"></div>
+  </div>
+</div>
+
+<div class="features-bar">
+  <div class="features-inner">
+    <div class="feature-item"><span class="icon">🚚</span><div><h4>Free Shipping</h4><p>On orders above ₹999</p></div></div>
+    <div class="feature-item"><span class="icon">✨</span><div><h4>Premium Quality</h4><p>Hand-picked fabrics</p></div></div>
+    <div class="feature-item"><span class="icon">🔄</span><div><h4>Easy Returns</h4><p>7-day return policy</p></div></div>
+    <div class="feature-item"><span class="icon">🔒</span><div><h4>Secure Payment</h4><p>100% safe checkout</p></div></div>
+    <div class="feature-item"><span class="icon">📞</span><div><h4>24/7 Support</h4><p>Always here for you</p></div></div>
+  </div>
+</div>
+
+<section id="categories" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow">Browse by Style</span>
+      <h2>Our Collections</h2>
+      <div class="gold-line"></div>
+      <p class="sub">From bridal elegance to everyday grace — find your perfect dupatta</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card" onclick="filterCat('bridal')">
+        <img src="https://images.unsplash.com/photo-1610189020684-2d3cc37a64d3?w=600&q=80" alt="Bridal" onerror="this.src='logo.png'">
+        <div class="cat-overlay"><span class="eyebrow" style="color:var(--gold);">Premium</span><h3>Bridal Dupattas</h3><p class="cnt">42 Designs</p><button class="cat-btn">Shop Now</button></div>
+      </div>
+      <div class="cat-card" onclick="filterCat('banarasi')">
+        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80" alt="Banarasi" onerror="this.src='logo.png'">
+        <div class="cat-overlay"><span class="eyebrow" style="color:var(--gold);">Traditional</span><h3>Banarasi Silk</h3><p class="cnt">78 Designs</p><button class="cat-btn">Shop Now</button></div>
+      </div>
+      <div class="cat-card" onclick="filterCat('chiffon')">
+        <img src="https://images.unsplash.com/photo-1617086822132-9cef8a5f9fec?w=600&q=80" alt="Chiffon" onerror="this.src='logo.png'">
+        <div class="cat-overlay"><span class="eyebrow" style="color:var(--gold);">Lightweight</span><h3>Chiffon Bliss</h3><p class="cnt">55 Designs</p><button class="cat-btn">Shop Now</button></div>
+      </div>
+      <div class="cat-card" onclick="filterCat('georgette')">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b0e3e?w=600&q=80" alt="Georgette" onerror="this.src='logo.png'">
+        <div class="cat-overlay"><span class="eyebrow" style="color:var(--gold);">Festive</span><h3>Georgette Glory</h3><p class="cnt">63 Designs</p><button class="cat-btn">Shop Now</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow">Handpicked For You</span>
+      <h2 id="productsTitle">Our Best Sellers</h2>
+      <div class="gold-line"></div>
+      <p class="sub">Each dupatta crafted with love, tradition, and artistry</p>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<div class="luxury-banner">
+  <div class="luxury-banner-inner">
+    <span class="eyebrow" style="color:var(--gold);">Exclusive Offer</span>
+    <h2>Up to 40% Off on Bridal Collection</h2>
+    <p>Limited time festive sale. Shop the finest handloom and embroidered bridal dupattas. Use code <strong style="color:var(--gold-light);">BRIDE2025</strong> at checkout.</p>
+    <button class="btn-primary" onclick="filterCat('bridal'); document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Bridal Collection</button>
+  </div>
+</div>
+
+<section id="about" style="background:var(--white);">
+  <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--dark);font-weight:400;margin-bottom:16px;">15 Years of Weaving Dreams</h2>
+      <div class="gold-line" style="margin:0 0 20px;"></div>
+      <p style="font-size:13px;line-height:1.9;color:var(--text-light);margin-bottom:16px;">Minaxi Textiles was born from a deep love for India's rich textile heritage. For over 15 years, we have been bringing you the finest ethnic dupattas — each one a masterpiece of craftsmanship.</p>
+      <p style="font-size:13px;line-height:1.9;color:var(--text-light);margin-bottom:24px;">From the looms of Varanasi to the workshops of Rajasthan, we source directly from skilled artisans who pour their soul into every thread. When you wear Minaxi, you carry a living tradition.</p>
+      <button class="btn-primary" onclick="showToast('✨ Thank you for your interest in Minaxi Textiles!')">Learn More</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="background:var(--maroon);padding:30px;color:#fff;text-align:center;"><p style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);">500+</p><p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.7;">Unique Designs</p></div>
+      <div style="background:var(--gold);padding:30px;text-align:center;"><p style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--dark);">10K+</p><p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.7;">Happy Clients</p></div>
+      <div style="background:var(--cream);border:1px solid var(--border);padding:30px;text-align:center;"><p style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--maroon);">50+</p><p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);">Artisans</p></div>
+      <div style="background:var(--dark);padding:30px;text-align:center;"><p style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);">15+</p><p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);">Years Legacy</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="eyebrow">What They Say</span>
+      <h2>Customer Love</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">Absolutely stunning quality! I ordered a bridal dupatta for my wedding and everyone kept asking where I got it. The zari work is so intricate and beautiful — truly a masterpiece!</p><div class="testi-author"><div class="testi-avatar">P</div><div><h4>Priya Sharma</h4><p>Mumbai · Bridal Customer</p></div></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">The Banarasi silk dupatta exceeded my expectations. Packaging was luxurious and delivery was super fast. Minaxi Textiles is my go-to for all ethnic occasions now!</p><div class="testi-author"><div class="testi-avatar">R</div><div><h4>Rekha Agarwal</h4><p>Jaipur · Loyal Customer</p></div></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">Gifted a georgette dupatta to my mother for Diwali — she was in tears! The color, the embroidery, the feel... truly premium. Will definitely order again and again!</p><div class="testi-author"><div class="testi-avatar">A</div><div><h4>Anita Verma</h4><p>Delhi · Gifting Customer</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Minaxi Textiles">
+      <h3>Minaxi Textiles</h3>
+      <p>Crafting elegant ethnic dupattas since 2009. Where every thread tells a story of heritage, artistry, and timeless beauty from the heart of Rajasthan.</p>
+      <div class="footer-social">
+        <button class="social-btn" onclick="showToast('📘 Facebook page coming soon!')">f</button>
+        <button class="social-btn" onclick="showToast('📸 @minaxitextiles on Instagram')">✦</button>
+        <button class="social-btn" onclick="showToast('▶ YouTube channel coming soon!')">▶</button>
+        <button class="social-btn" onclick="showToast('💬 WhatsApp: +91 98765 43210')">W</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a onclick="filterCat('all');document.getElementById('products').scrollIntoView({behavior:'smooth'})">All Products</a>
+      <a onclick="filterCat('bridal');document.getElementById('products').scrollIntoView({behavior:'smooth'})">Bridal Collection</a>
+      <a onclick="filterCat('banarasi');document.getElementById('products').scrollIntoView({behavior:'smooth'})">Banarasi Silk</a>
+      <a onclick="filterCat('chiffon');document.getElementById('products').scrollIntoView({behavior:'smooth'})">Chiffon Dupattas</a>
+      <a onclick="showToast('✨ New arrivals being added!')">New Arrivals</a>
+      <a onclick="showToast('🎁 Gift sets coming soon!')">Gift Sets</a>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <a onclick="showToast('📦 Contact us to track your order!')">Track My Order</a>
+      <a onclick="showToast('🔄 Return within 7 days of delivery')">Returns & Exchanges</a>
+      <a onclick="showToast('📏 Standard dupatta sizes: 2.5 to 3.5 meters')">Size Guide</a>
+      <a onclick="showToast('🧵 Hand wash recommended for silk dupattas')">Fabric Care</a>
+      <a onclick="showToast('💬 FAQs page coming soon!')">FAQs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <a>📍 Pali, Rajasthan, India</a>
+      <a>📞 +91 98765 43210</a>
+      <a>✉️ hello@minaxitextiles.com</a>
+      <a>🕐 Mon–Sat: 9am – 7pm IST</a>
+      <div style="margin-top:16px;">
+        <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Newsletter</p>
+        <div style="display:flex;">
+          <input type="email" id="emailInput" placeholder="Your email" style="flex:1;padding:9px 12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:12px;outline:none;font-family:'Jost',sans-serif;">
+          <button onclick="showToast('✅ Subscribed! Thank you!')" style="background:var(--gold);border:none;padding:9px 14px;cursor:pointer;font-size:14px;color:var(--dark);font-weight:600;">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>Minaxi Textiles</span>. All rights reserved. Made with ❤️ in Rajasthan, India.</div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Your Cart 🛍️</h3><button class="cart-close" onclick="toggleCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter"></div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalEv(event)">
+  <div class="product-modal" onclick="event.stopPropagation()">
+    <div class="modal-img"><img id="modalImg" src="" alt="Product"></div>
+    <div class="modal-info">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="fab-tag" id="modalFabric"></span>
+      <h2 id="modalName"></h2>
+      <div class="stars" style="margin-bottom:10px;">★★★★★ <span style="font-size:11px;color:var(--text-light);font-family:'Jost',sans-serif;">(124 reviews)</span></div>
+      <div class="modal-price" id="modalPrice"></div>
+      <p class="mdesc" id="modalDesc"></p>
+      <span class="size-label">Length / Size</span>
+      <div class="size-btns">
+        <button class="size-btn active" onclick="selSize(this)">2.5 Mtrs</button>
+        <button class="size-btn" onclick="selSize(this)">3 Mtrs</button>
+        <button class="size-btn" onclick="selSize(this)">3.5 Mtrs</button>
+      </div>
+      <span class="size-label">Color</span>
+      <div class="color-dots" id="modalColors"></div>
+      <div class="modal-btns">
+        <button class="btn-primary" id="modalAddBtn" style="flex:2;">🛒 Add to Cart</button>
+        <button style="flex:1;background:var(--cream);border:1px solid var(--border);cursor:pointer;font-size:18px;" onclick="showToast('❤️ Added to wishlist!')">♡</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN FAB -->
+<div class="admin-fab"><button onclick="openAdmin()" title="Admin Panel">⚙️</button></div>
+<button class="whatsapp-btn" onclick="showToast('💬 WhatsApp: +91 98765 43210')" title="Chat on WhatsApp">💬</button>
+
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-box">
+    <div class="admin-head">
+      <h2>⚙️ Admin Panel — Minaxi Textiles</h2>
+      <button class="admin-close-btn" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchTab('dashboard',this)">Dashboard</button>
+      <button class="admin-tab" onclick="switchTab('products',this)">Products</button>
+      <button class="admin-tab" onclick="switchTab('add',this)">Add Product</button>
+      <button class="admin-tab" onclick="switchTab('settings',this)">Settings</button>
+      <button class="admin-tab" onclick="switchTab('orders',this)">Orders</button>
+    </div>
+    <div class="admin-content">
+
+      <div class="admin-section active" id="tab-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card"><h3 id="statProds">8</h3><p>Total Products</p></div>
+          <div class="stat-card"><h3 id="statOrd">24</h3><p>Orders Today</p></div>
+          <div class="stat-card"><h3>₹<span id="statRev">0</span></h3><p>Cart Revenue</p></div>
+          <div class="stat-card"><h3 id="statCartN">0</h3><p>Cart Items</p></div>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--border);padding:20px;">
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--dark);margin-bottom:14px;">Quick Actions</h4>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="admin-btn" onclick="switchTabDirect('add')">+ Add New Product</button>
+            <button class="admin-btn sec" onclick="switchTabDirect('products')">View All Products</button>
+            <button class="admin-btn sec" onclick="switchTabDirect('settings')">Site Settings</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-section" id="tab-products">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:16px;">Manage Products</h3>
+        <div class="admin-prods" id="adminProdsList"></div>
+      </div>
+
+      <div class="admin-section" id="tab-add">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:20px;">Add New Product</h3>
+        <div class="admin-grid">
+          <div>
+            <div class="form-group"><label>Product Name</label><input type="text" id="newName" placeholder="e.g. Royal Banarasi Dupatta"></div>
+            <div class="form-group"><label>Category</label><select id="newCat"><option value="banarasi">Banarasi Silk</option><option value="chiffon">Chiffon</option><option value="georgette">Georgette</option><option value="silk">Pure Silk</option><option value="bridal">Bridal</option></select></div>
+            <div class="form-group"><label>Price (₹)</label><input type="number" id="newPrice" placeholder="1299"></div>
+            <div class="form-group"><label>Original Price (₹) — for strikethrough</label><input type="number" id="newOldPrice" placeholder="1999"></div>
+            <div class="form-group"><label>Badge</label><select id="newBadge"><option value="">None</option><option value="New">New</option><option value="Sale">Sale</option><option value="Hot">Hot</option></select></div>
+            <div class="form-group"><label>Description</label><textarea id="newDesc" placeholder="Describe the dupatta — fabric, embroidery, occasion..."></textarea></div>
+          </div>
+          <div>
+            <div class="form-group"><label>Product Image URL</label><input type="text" id="newImgUrl" placeholder="https://images.unsplash.com/..."></div>
+            <div class="form-group">
+              <label>OR Upload Image File</label>
+              <div class="img-upload-area">
+                <input type="file" accept="image/*" onchange="handleImgUpload(event)">
+                <div class="uicon">📷</div>
+                <p>Click to upload or drag & drop<br><small>JPG, PNG, WEBP supported</small></p>
+              </div>
+              <div class="img-preview" id="imgPreview"></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:8px;">
+          <button class="admin-btn" onclick="addProduct()">✅ Add Product to Store</button>
+          <button class="admin-btn sec" onclick="clearForm()">✕ Clear Form</button>
+        </div>
+      </div>
+
+      <div class="admin-section" id="tab-settings">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:20px;">Site Settings</h3>
+        <div class="admin-grid">
+          <div>
+            <div class="form-group"><label>Business Name</label><input type="text" id="setName" value="Minaxi Textiles"></div>
+            <div class="form-group"><label>Tagline</label><input type="text" id="setTagline" value="Elegant Ethnic Dupattas"></div>
+            <div class="form-group"><label>Phone Number</label><input type="text" id="setPhone" value="+91 98765 43210"></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="setEmail" value="hello@minaxitextiles.com"></div>
+            <div class="form-group"><label>Business Address</label><input type="text" id="setAddress" value="Pali, Rajasthan, India"></div>
+          </div>
+          <div>
+            <div class="form-group"><label>Announcement Bar Text</label><input type="text" id="setAnnounce" value="Free Shipping on Orders Above ₹999"></div>
+            <div class="form-group">
+              <label>Upload New Logo</label>
+              <div class="img-upload-area">
+                <input type="file" accept="image/*" onchange="handleLogoUpload(event)">
+                <div class="uicon">🖼️</div>
+                <p>Upload a new logo image<br><small>Recommended: 300x300px PNG</small></p>
+              </div>
+            </div>
+            <div class="form-group"><label>Hero Headline</label><input type="text" id="setHero" value="Drape Yourself in Elegance & Heritage"></div>
+          </div>
+        </div>
+        <button class="admin-btn" onclick="saveSettings()">💾 Save All Settings</button>
+      </div>
+
+      <div class="admin-section" id="tab-orders">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:20px;">Recent Orders</h3>
+        <table class="orders-table">
+          <thead><tr><th>Order ID</th><th>Customer</th><th>Product</th><th>Amount</th><th>Status</th></tr></thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var products=[
+  {id:1,name:'Royal Banarasi Dupatta',fab:'Banarasi Silk',cat:'banarasi',price:2499,old:3499,desc:'Exquisite handwoven Banarasi silk dupatta with intricate zari work. Perfect for bridal and festive occasions. Each piece is a masterpiece created by skilled artisans of Varanasi.',img:'https://images.unsplash.com/photo-1610189020684-2d3cc37a64d3?w=500&q=80',badge:'Hot',colors:['#C9A84C','#6B1B2A','#1A1209','#2E6E4F']},
+  {id:2,name:'Chiffon Dream Dupatta',fab:'Pure Chiffon',cat:'chiffon',price:899,old:1299,desc:'Lightweight and flowy pure chiffon dupatta with delicate embroidery borders. Ideal for casual and semi-formal occasions. Available in pastel shades.',img:'https://images.unsplash.com/photo-1617086822132-9cef8a5f9fec?w=500&q=80',badge:'Sale',colors:['#F5D0D0','#D4A8D4','#A8C5D4','#F5E6C0']},
+  {id:3,name:'Georgette Festive Dupatta',fab:'Pure Georgette',cat:'georgette',price:1299,old:1799,desc:'Stunning georgette dupatta with digital floral prints and golden border. A must-have for festive celebrations and wedding functions.',img:'https://images.unsplash.com/photo-1594938298603-c8148c4b0e3e?w=500&q=80',badge:'New',colors:['#E8C97A','#8B4513','#4A0E2D','#1A5C3A']},
+  {id:4,name:'Bridal Silk Dupatta',fab:'Pure Silk',cat:'bridal',price:4999,old:6999,desc:'Magnificent bridal silk dupatta with heavy zardozi embroidery and stone work. A showstopper for your special day. Handcrafted by master artisans.',img:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&q=80',badge:'Hot',colors:['#C9A84C','#E8C97A','#6B1B2A','#FFF8E1']},
+  {id:5,name:'Chanderi Cotton Dupatta',fab:'Chanderi Cotton',cat:'silk',price:699,old:999,desc:'Soft and elegant Chanderi cotton dupatta with subtle buti print. Comfortable for daily wear and light occasions. Perfect for summer.',img:'https://images.unsplash.com/photo-1610189020684-2d3cc37a64d3?w=500&q=80',badge:'',colors:['#F5F5DC','#FFB6C1','#B0D0E8','#90EE90']},
+  {id:6,name:'Embroidered Net Dupatta',fab:'Net Fabric',cat:'bridal',price:1899,old:2499,desc:'Beautiful net dupatta with heavy hand embroidery work. Perfect for engagement, mehndi, and bridal functions. Intricate threadwork throughout.',img:'https://images.unsplash.com/photo-1617086822132-9cef8a5f9fec?w=500&q=80',badge:'New',colors:['#FFFFFF','#FFD700','#FFC0CB','#C9A84C']},
+  {id:7,name:'Phulkari Embroidery Dupatta',fab:'Cotton Silk',cat:'georgette',price:1199,old:1599,desc:'Traditional Phulkari embroidered dupatta celebrating Indian folk art. Vibrant colors and dense embroidery that brings joy to every occasion.',img:'https://images.unsplash.com/photo-1594938298603-c8148c4b0e3e?w=500&q=80',badge:'',colors:['#FF4500','#FFD700','#228B22','#9400D3']},
+  {id:8,name:'Zari Border Chiffon',fab:'Chiffon',cat:'chiffon',price:1099,old:1499,desc:'Elegant chiffon dupatta with heavy zari border on both sides. The perfect combination of grace and glamour for any occasion.',img:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&q=80',badge:'Sale',colors:['#C9A84C','#9A7A2E','#FFFFF0','#4A0E2D']}
+];
+var cart=[];
+var currentCat='all';
+var uploadedImg=null;
+
+function renderProducts(cat){
+  currentCat=cat;
+  var grid=document.getElementById('productGrid');
+  var list=cat==='all'?products:products.filter(function(p){return p.cat===cat;});
+  if(!list.length){grid.innerHTML='<div style="grid-column:span 4;text-align:center;padding:60px;color:var(--text-light);"><p style="font-size:48px">🔍</p><p style="margin-top:14px;font-size:14px;">No products in this category yet.</p></div>';return;}
+  grid.innerHTML=list.map(function(p){
+    return '<div class="product-card" onclick="openModal('+p.id+')">'
+      +'<div class="product-img-wrap">'
+      +'<img src="'+p.img+'" alt="'+p.name+'" onerror="this.src=\'logo.png\'">'
+      +(p.badge?'<span class="product-badge badge-'+p.badge.toLowerCase()+'">'+p.badge+'</span>':'')
+      +'<div class="product-actions">'
+      +'<button onclick="event.stopPropagation();addToCart('+p.id+')" title="Add to Cart">🛒</button>'
+      +'<button onclick="event.stopPropagation();showToast(\'❤️ Added to wishlist!\')" title="Wishlist">♡</button>'
+      +'<button onclick="event.stopPropagation();openModal('+p.id+')" title="Quick View">👁️</button>'
+      +'</div></div>'
+      +'<div class="product-info">'
+      +'<div class="stars">★★★★★</div>'
+      +'<div class="fab">'+p.fab+'</div>'
+      +'<h3>'+p.name+'</h3>'
+      +'<div class="price-wrap">'
+      +'<div><span class="price">₹'+p.price.toLocaleString()+'</span>'+(p.old?'<span class="old-price">₹'+p.old.toLocaleString()+'</span>':'')+'</div>'
+      +'<button class="add-cart-btn" onclick="event.stopPropagation();addToCart('+p.id+')">Add +</button>'
+      +'</div></div></div>';
+  }).join('');
+}
+
+function filterCat(cat){
+  currentCat=cat;
+  var titles={all:'Our Best Sellers',banarasi:'Banarasi Silk Collection',chiffon:'Chiffon Dupattas',georgette:'Georgette Collection',silk:'Pure Silk Dupattas',bridal:'Bridal Collection'};
+  document.getElementById('productsTitle').textContent=titles[cat]||'Collection';
+  renderProducts(cat);
+  document.querySelectorAll('nav a').forEach(function(a){a.classList.remove('active');});
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+
+function searchProducts(){
+  var q=document.getElementById('searchInput').value.toLowerCase().trim();
+  if(!q){renderProducts(currentCat);return;}
+  var list=products.filter(function(p){return p.name.toLowerCase().includes(q)||p.fab.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q);});
+  document.getElementById('productsTitle').textContent='Search: "'+q+'"';
+  var grid=document.getElementById('productGrid');
+  if(!list.length){grid.innerHTML='<div style="grid-column:span 4;text-align:center;padding:60px;"><p style="font-size:48px">🔍</p><p style="margin-top:14px;font-size:14px;color:var(--text-light);">No results for "'+q+'"</p></div>';return;}
+  var tmp=currentCat;currentCat='all';
+  grid.innerHTML=list.map(function(p){
+    return '<div class="product-card" onclick="openModal('+p.id+')">'
+      +'<div class="product-img-wrap"><img src="'+p.img+'" alt="'+p.name+'" onerror="this.src=\'logo.png\'">'
+      +(p.badge?'<span class="product-badge badge-'+p.badge.toLowerCase()+'">'+p.badge+'</span>':'')
+      +'<div class="product-actions"><button onclick="event.stopPropagation();addToCart('+p.id+')">🛒</button><button onclick="event.stopPropagation();showToast(\'❤️ Wishlisted!\')">♡</button><button onclick="event.stopPropagation();openModal('+p.id+')">👁️</button></div></div>'
+      +'<div class="product-info"><div class="stars">★★★★★</div><div class="fab">'+p.fab+'</div><h3>'+p.name+'</h3>'
+      +'<div class="price-wrap"><div><span class="price">₹'+p.price.toLocaleString()+'</span>'+(p.old?'<span class="old-price">₹'+p.old.toLocaleString()+'</span>':'')+'</div>'
+      +'<button class="add-cart-btn" onclick="event.stopPropagation();addToCart('+p.id+')">Add +</button></div></div></div>';
+  }).join('');
+  currentCat=tmp;
+}
+
+var curModalId=null;
+function openModal(id){
+  var p=products.find(function(x){return x.id===id;});
+  if(!p)return;
+  curModalId=id;
+  document.getElementById('modalImg').src=p.img;
+  document.getElementById('modalName').textContent=p.name;
+  document.getElementById('modalFabric').textContent=p.fab;
+  document.getElementById('modalPrice').innerHTML='₹'+p.price.toLocaleString()+(p.old?' <span style="font-size:14px;color:var(--text-light);text-decoration:line-through;font-family:Jost,sans-serif;">₹'+p.old.toLocaleString()+'</span>':'');
+  document.getElementById('modalDesc').textContent=p.desc;
+  document.getElementById('modalColors').innerHTML=(p.colors||['#C9A84C']).map(function(c,i){return '<div class="color-dot'+(i===0?' active':'')+'" style="background:'+c+'" onclick="selColor(this)"></div>';}).join('');
+  document.getElementById('modalAddBtn').onclick=function(){addToCart(id);closeModal();};
+  document.querySelectorAll('.size-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelector('.size-btn').classList.add('active');
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModalEv(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
+function selSize(btn){document.querySelectorAll('.size-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');}
+function selColor(dot){document.querySelectorAll('.color-dot').forEach(function(d){d.classList.remove('active');});dot.classList.add('active');}
+
+function addToCart(id){
+  var p=products.find(function(x){return x.id===id;});if(!p)return;
+  var ex=cart.find(function(c){return c.id===id;});
+  if(ex){ex.qty++;}else{cart.push(Object.assign({},p,{qty:1}));}
+  updateBadge();
+  showToast('✅ "'+p.name+'" added to cart!');
+  renderCart();
+}
+function updateBadge(){
+  var t=cart.reduce(function(a,c){return a+c.qty;},0);
+  document.getElementById('cartBadge').textContent=t;
+  document.getElementById('statCartN').textContent=t;
+}
+function toggleCart(){
+  document.getElementById('cartDrawer').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+  renderCart();
+}
+function renderCart(){
+  var ci=document.getElementById('cartItems');
+  var cf=document.getElementById('cartFooter');
+  if(!cart.length){ci.innerHTML='<div class="empty-cart"><div class="eicon">🛍️</div><p>Your cart is empty</p><button class="btn-primary" onclick="toggleCart()" style="font-size:10px;letter-spacing:2px;">Continue Shopping</button></div>';cf.innerHTML='';return;}
+  ci.innerHTML=cart.map(function(item){
+    return '<div class="cart-item">'
+      +'<div class="cart-item-img"><img src="'+item.img+'" alt="'+item.name+'" onerror="this.src=\'logo.png\'"></div>'
+      +'<div class="cart-item-info">'
+      +'<h4>'+item.name+'</h4><div class="fab2">'+item.fab+'</div>'
+      +'<div style="display:flex;justify-content:space-between;align-items:center;">'
+      +'<div class="cart-item-price">₹'+(item.price*item.qty).toLocaleString()+'</div>'
+      +'<button class="cart-remove" onclick="removeCart('+item.id+')">✕</button>'
+      +'</div>'
+      +'<div class="qty-ctrl"><button onclick="chQty('+item.id+',-1)">−</button><span>'+item.qty+'</span><button onclick="chQty('+item.id+',1)">+</button></div>'
+      +'</div></div>';
+  }).join('');
+  var total=cart.reduce(function(a,c){return a+c.price*c.qty;},0);
+  var count=cart.reduce(function(a,c){return a+c.qty;},0);
+  cf.innerHTML='<div class="cart-total"><span>Total ('+count+' items)</span><strong>₹'+total.toLocaleString()+'</strong></div>'
+    +'<button class="btn-primary" style="width:100%;margin-bottom:8px;font-size:10px;letter-spacing:2px;" onclick="checkout()">Proceed to Checkout →</button>'
+    +'<button onclick="toggleCart()" style="width:100%;background:none;border:1px solid var(--border);padding:12px;cursor:pointer;font-size:10px;letter-spacing:2px;font-family:Jost,sans-serif;">Continue Shopping</button>';
+  document.getElementById('statRev').textContent=total.toLocaleString();
+}
+function removeCart(id){cart=cart.filter(function(c){return c.id!==id;});updateBadge();renderCart();}
+function chQty(id,d){var i=cart.find(function(c){return c.id===id;});if(!i)return;i.qty+=d;if(i.qty<=0)removeCart(id);else{updateBadge();renderCart();}}
+function checkout(){showToast('🎉 Order placed! Thank you for shopping with Minaxi Textiles!');cart=[];updateBadge();renderCart();toggleCart();}
+
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}
+
+function openAdmin(){document.getElementById('adminOverlay').classList.add('open');updateDash();renderAdminProds();renderOrders();}
+function closeAdmin(){document.getElementById('adminOverlay').classList.remove('open');}
+
+function switchTab(tab,btn){
+  document.querySelectorAll('.admin-tab').forEach(function(b){b.classList.remove('active');});
+  if(btn)btn.classList.add('active');
+  document.querySelectorAll('.admin-section').forEach(function(s){s.classList.remove('active');});
+  document.getElementById('tab-'+tab).classList.add('active');
+  if(tab==='products')renderAdminProds();
+  if(tab==='orders')renderOrders();
+}
+function switchTabDirect(tab){
+  var tabs=['dashboard','products','add','settings','orders'];
+  var idx=tabs.indexOf(tab);
+  var btns=document.querySelectorAll('.admin-tab');
+  switchTab(tab,btns[idx]);
+}
+
+function updateDash(){
+  document.getElementById('statProds').textContent=products.length;
+  document.getElementById('statCartN').textContent=cart.reduce(function(a,c){return a+c.qty;},0);
+  document.getElementById('statRev').textContent=cart.reduce(function(a,c){return a+c.price*c.qty;},0).toLocaleString();
+}
+function renderAdminProds(){
+  document.getElementById('adminProdsList').innerHTML=products.map(function(p){
+    return '<div class="admin-prod-item">'
+      +'<img src="'+p.img+'" alt="'+p.name+'" onerror="this.src=\'logo.png\'">'
+      +'<h4>'+p.name+'</h4>'
+      +'<p class="info">₹'+p.price.toLocaleString()+' · '+p.fab+'</p>'
+      +'<p class="info" style="text-transform:uppercase;font-size:10px;color:var(--gold-dark);">'+p.cat+'</p>'
+      +'<div class="admin-prod-actions">'
+      +'<button onclick="editProd('+p.id+')">✏️ Edit</button>'
+      +'<button onclick="delProd('+p.id+')">🗑️ Delete</button>'
+      +'</div></div>';
+  }).join('');
+}
+function delProd(id){
+  if(!confirm('Delete this product?'))return;
+  products=products.filter(function(p){return p.id!==id;});
+  renderAdminProds();renderProducts(currentCat);showToast('🗑️ Product deleted');updateDash();
+}
+function editProd(id){
+  var p=products.find(function(x){return x.id===id;});if(!p)return;
+  switchTabDirect('add');
+  document.getElementById('newName').value=p.name;
+  document.getElementById('newCat').value=p.cat;
+  document.getElementById('newPrice').value=p.price;
+  document.getElementById('newOldPrice').value=p.old||'';
+  document.getElementById('newBadge').value=p.badge||'';
+  document.getElementById('newDesc').value=p.desc;
+  document.getElementById('newImgUrl').value=p.img;
+  delProd(id);
+  showToast('✏️ Editing — make changes and re-save');
+}
+function addProduct(){
+  var name=document.getElementById('newName').value.trim();
+  var price=parseFloat(document.getElementById('newPrice').value);
+  if(!name||!price){showToast('⚠️ Please enter product name and price');return;}
+  var catEl=document.getElementById('newCat');
+  var img=uploadedImg||document.getElementById('newImgUrl').value||'https://images.unsplash.com/photo-1610189020684-2d3cc37a64d3?w=500&q=80';
+  products.push({
+    id:Date.now(),name:name,
+    fab:catEl.options[catEl.selectedIndex].text,
+    cat:catEl.value,price:price,
+    old:parseFloat(document.getElementById('newOldPrice').value)||null,
+    badge:document.getElementById('newBadge').value||'',
+    desc:document.getElementById('newDesc').value||'Beautiful handcrafted dupatta from Minaxi Textiles.',
+    img:img,colors:['#C9A84C','#6B1B2A','#1A1209']
+  });
+  clearForm();renderProducts(currentCat);renderAdminProds();updateDash();
+  showToast('✅ Product added successfully!');switchTabDirect('products');
+}
+function clearForm(){
+  ['newName','newPrice','newOldPrice','newDesc','newImgUrl'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('newBadge').value='';
+  document.getElementById('imgPreview').innerHTML='';
+  uploadedImg=null;
+}
+function handleImgUpload(e){
+  var f=e.target.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(ev){uploadedImg=ev.target.result;document.getElementById('imgPreview').innerHTML='<img src="'+ev.target.result+'" alt="Preview">';};
+  r.readAsDataURL(f);
+}
+function handleLogoUpload(e){
+  var f=e.target.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(ev){document.getElementById('siteLogo').src=ev.target.result;showToast('🖼️ Logo updated successfully!');};
+  r.readAsDataURL(f);
+}
+function saveSettings(){
+  document.getElementById('siteName').textContent=document.getElementById('setName').value;
+  document.getElementById('siteTagline').textContent=document.getElementById('setTagline').value;
+  document.querySelector('.top-bar').innerHTML='🌸 '+document.getElementById('setAnnounce').value+' &nbsp;|&nbsp; Call: '+document.getElementById('setPhone').value;
+  showToast('💾 Settings saved successfully!');
+}
+function renderOrders(){
+  var orders=[
+    {id:'#MT1042',cust:'Priya S.',prod:'Bridal Silk Dupatta',amt:'₹4,999',status:'s-delivered',label:'Delivered'},
+    {id:'#MT1041',cust:'Rekha A.',prod:'Banarasi Dupatta',amt:'₹2,499',status:'s-processing',label:'Processing'},
+    {id:'#MT1040',cust:'Sunita K.',prod:'Chiffon Dupatta',amt:'₹899',status:'s-pending',label:'Pending'},
+    {id:'#MT1039',cust:'Anita V.',prod:'Georgette Dupatta',amt:'₹1,299',status:'s-delivered',label:'Delivered'},
+    {id:'#MT1038',cust:'Meena R.',prod:'Zari Border Chiffon',amt:'₹1,099',status:'s-delivered',label:'Delivered'},
+  ];
+  document.getElementById('ordersBody').innerHTML=orders.map(function(o){
+    return '<tr><td style="font-weight:600;color:var(--dark);">'+o.id+'</td><td>'+o.cust+'</td><td>'+o.prod+'</td><td style="font-weight:600;color:var(--maroon);">'+o.amt+'</td><td><span class="order-status '+o.status+'">'+o.label+'</span></td></tr>';
+  }).join('');
+}
+
+renderProducts('all');
+</script>
+</body>
+</html>
